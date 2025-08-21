@@ -1,0 +1,96 @@
+#!/bin/sh
+set -euf
+top="$(git rev-parse --show-toplevel)"
+cd "$top/examples"
+
+for dir in \
+    activity \
+    actor \
+    allergy \
+    appointment \
+    artifact \
+    audit \
+    batch \
+    biologicallyderivedproduct \
+    bundle \
+    capability \
+    chargeitem \
+    clinical \
+    cm \
+    code \
+    communication \
+    compartment \
+    concept \
+    condition \
+    coverage \
+    dataelements \
+    definition \
+    Device \
+    device \
+    diagnostic \
+    document \
+    Document \
+    Encounter \
+    encounter \
+    enrollment \
+    evidence \
+    external-resources \
+    family \
+    fivews \
+    formulary \
+    guidance \
+    group \
+    Group \
+    imaging \
+    immunization \
+    inventory \
+    json-edge-cases \
+    library \
+    location \
+    measure \
+    medication \
+    medicinal \
+    message \
+    molecularsequence \
+    naming \
+    notification \
+    observation \
+    operation \
+    organization \
+    participant \
+    patient \
+    Patient \
+    payment \
+    person \
+    plan \
+    practitioner \
+    Practitioner \
+    product \
+    profiles \
+    provenance \
+    publishable \
+    questionnaire \
+    RelatedPerson \
+    requestor \
+    risk \
+    sc-valueset \
+    schedule \
+    search \
+    sequence \
+    ServiceRequest \
+    shareable \
+    specimen \
+    Specimen \
+    structure \
+    substance \
+    subscription \
+    supply \
+    task \
+    test \
+    transaction \
+    terminology \
+    valueset
+do 
+    mkdir -p $top/examples/$dir || true
+    mv $dir* $dir || true
+done
